@@ -52,6 +52,7 @@ public final class MainMenuScreen extends Screen {
         addCheckBox(new SelectionSort(), sortAlgorithmContainer);
         addCheckBox(new InsertionSort(), sortAlgorithmContainer);
         addCheckBox(new MergeSort(), sortAlgorithmContainer);
+        addCheckBox(new QuickSort(), sortAlgorithmContainer);
 
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);

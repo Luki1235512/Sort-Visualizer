@@ -3,11 +3,9 @@ package sortvisualizer.screens;
 import sortvisualizer.Main;
 import sortvisualizer.algorithms.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public final class MainMenuScreen extends Screen {
@@ -47,7 +45,7 @@ public final class MainMenuScreen extends Screen {
         outerContainer.setLayout(new BoxLayout(outerContainer, BoxLayout.LINE_AXIS));
 
         sortAlgorithmContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //TODO: algos
+        //TODO: bucket sort
         addCheckBox(new BubbleSort(), sortAlgorithmContainer);
         addCheckBox(new SelectionSort(), sortAlgorithmContainer);
         addCheckBox(new InsertionSort(), sortAlgorithmContainer);
@@ -94,12 +92,10 @@ public final class MainMenuScreen extends Screen {
 
     @Override
     public void onOpen() {
-        checkBoxes.forEach((box) -> {
-            box.unselect();
-        });
+        checkBoxes.forEach(AlgorithmCheckBox::unselect);
     }
 
-    private class AlgorithmCheckBox {
+    private static class AlgorithmCheckBox {
         private final ISortAlgorithm algorithm;
         private final JCheckBox box;
 

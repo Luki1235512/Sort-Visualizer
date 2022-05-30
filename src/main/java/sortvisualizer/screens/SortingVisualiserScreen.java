@@ -36,9 +36,9 @@ public final class SortingVisualiserScreen extends Screen {
     }
 
     public void onOpen() {
-        SwingWorker<Void, Void> swingWorker = new SwingWorker<Void, Void>() {
+        SwingWorker<Void, Void> swingWorker = new SwingWorker<>() {
             @Override
-            protected Void doInBackground() throws Exception {
+            protected Void doInBackground() {
                 try {
                     Thread.sleep(250);
                 } catch (InterruptedException e) {

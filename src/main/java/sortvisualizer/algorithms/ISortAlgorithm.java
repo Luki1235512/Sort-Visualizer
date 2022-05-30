@@ -4,12 +4,12 @@ import sortvisualizer.SortArray;
 
 public interface ISortAlgorithm {
 
-    public String getName();
+    String getName();
 
-    public long getDelay();
+    long getDelay();
 
-    public void setDelay(long delay);
+    void setDelay(long delay);
 
-    public void runSort(SortArray array);
+    void runSort(SortArray array);
 
 }

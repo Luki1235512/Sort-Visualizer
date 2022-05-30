@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class RadixSort implements ISortAlgorithm {
 
     private long stepDelay = 5;
-    private int radix;
+    private final int radix;
     private int[] countingArr;
 
     public RadixSort(int radix) {

@@ -42,8 +42,8 @@ public class MergeSort implements ISortAlgorithm {
         int leftSize = middle - left + 1;
         int rightSize = right - middle;
 
-        int leftArray[] = getSubArray(array, left, leftSize);
-        int rightArray[] = getSubArray(array, middle + 1, rightSize);
+        int[] leftArray = getSubArray(array, left, leftSize);
+        int[] rightArray = getSubArray(array, middle + 1, rightSize);
 
         int i = 0;
         int j = 0;
@@ -75,7 +75,7 @@ public class MergeSort implements ISortAlgorithm {
     }
 
     private int[] getSubArray(SortArray array, int begin, int size) {
-        int arr[] = new int[size];
+        int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
             arr[i] = array.getValue(begin + i);
         }

@@ -21,14 +21,13 @@ public class SortArray extends JPanel {
 
     private final int[] array;
     private final int[] barColours;
-    private int spinnerValue = 0;
     private String algorithmName = "";
     private ISortAlgorithm algorithm;
     private long algorithmDelay = 0;
 
-    private MidiSoundPlayer player;
-    private JSpinner spinner;
-    private boolean playSounds;
+    private final MidiSoundPlayer player;
+    private final JSpinner spinner;
+    private final boolean playSounds;
 
     private int arrayChanges = 0;
 

@@ -49,7 +49,7 @@ public final class MainMenuScreen extends Screen {
 
         sortAlgorithmContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
         //TODO: algos
-
+        addCheckBox(new BubbleSort(), sortAlgorithmContainer);
 
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);

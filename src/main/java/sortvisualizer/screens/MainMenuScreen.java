@@ -3,6 +3,7 @@ package sortvisualizer.screens;
 import sortvisualizer.Main;
 import sortvisualizer.algorithms.BubbleSort;
 import sortvisualizer.algorithms.ISortAlgorithm;
+import sortvisualizer.algorithms.InsertionSort;
 import sortvisualizer.algorithms.SelectionSort;
 
 import javax.imageio.ImageIO;
@@ -52,6 +53,7 @@ public final class MainMenuScreen extends Screen {
         //TODO: algos
         addCheckBox(new BubbleSort(), sortAlgorithmContainer);
         addCheckBox(new SelectionSort(), sortAlgorithmContainer);
+        addCheckBox(new InsertionSort(), sortAlgorithmContainer);
 
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);

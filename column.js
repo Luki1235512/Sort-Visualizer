@@ -7,22 +7,27 @@ class Column {
         this.queue = [];
     }
 
-    moveTo(loc, frameCount = 100) {
+    moveTo(loc, yOffset = 1, frameCount = 20) {
         for (let i = 1; i <= frameCount; i++) {
             const t = i / frameCount;
+            const u = Math.sin(t * Math.PI);
             this.queue.push({
                 x: lerp(this.x, loc.x, t),
-                y: lerp(this.y, loc.y, t)
+                y: lerp(this.y, loc.y, t) + u * this.width / 2 * yOffset
             });
         }
     }
 
     draw(ctx) {
+        let changed = false;
+
         if (this.queue.length > 0) {
             const {x, y} = this.queue.shift();
             this.x = x;
             this.y = y;
+            changed = true;
         }
+
         const left = this.x - this.width / 2;
         const top = this.y - this.height;
         const right = this.x + this.width / 2;
@@ -36,5 +41,7 @@ class Column {
         ctx.ellipse(this.x, top, this.width / 2, this.width / 4, 0, 0, Math.PI * 2, true);
         ctx.fill();
         ctx.stroke();
+
+        return changed;
     }
 }

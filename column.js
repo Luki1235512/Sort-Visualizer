@@ -18,6 +18,17 @@ class Column {
         }
     }
 
+    jump(frameCount = 20) {
+        for (let i = 1; i <= frameCount; i++) {
+            const t = i / frameCount;
+            const u = Math.sin(t * Math.PI);
+            this.queue.push({
+                x: this.x,
+                y: this.y - u * this.width
+            });
+        }
+    }
+
     draw(ctx) {
         let changed = false;
 

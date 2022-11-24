@@ -84,7 +84,8 @@ function animate() {
     if (!changed && moves.length > 0) {
         const move = moves.shift();
         const [i, j] = move.indices;
-        const waveFormType = move.swap ? "square" : "sine";
+        // const waveFormType = move.swap ? "sine" : "square";
+        const waveFormType = "sine";
         playNote(cols[i].height + cols[j].height, waveFormType);
         if (move.swap) {
             cols[i].moveTo(cols[j]);
